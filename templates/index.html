@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSQL: AI-Based Database Query Assistant</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🤖 SmartSQL: AI-Based Database Query Assistant</h1>
+
+        <form method="POST">
+
+            <textarea
+    name="prompt"
+    placeholder="Enter your prompt here..."
+    required>{{ user_prompt if user_prompt else '' }}</textarea>
+
+            <button type="submit">
+                Generate SQL Query
+            </button>
+
+        </form>
+
+        {% if generated_query %}
+
+        <div class="output-box">
+
+            <h2>Generated SQL Query</h2>
+
+            <pre>{{ generated_query }}</pre>
+
+        </div>
+
+        {% endif %}
+
+        {% if dataset %}
+
+        <div class="output-box">
+
+            <h2>Generated Dataset</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        {% for key in dataset[0].keys() %}
+                        <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for row in dataset %}
+                    <tr>
+
+                        {% for value in row.values() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        {% endif %}
+
+        {% if results %}
+
+        <div class="output-box">
+
+            <h2>Query Result</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        {% for key in results[0].keys() %}
+                        <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for row in results %}
+                    <tr>
+
+                        {% for value in row.values() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

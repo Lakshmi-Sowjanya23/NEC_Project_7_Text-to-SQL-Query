@@ -1,0 +1,145 @@
+# SmartSQL: AI-Based Database Query Assistant
+
+SmartSQL is an AI-powered Text-to-SQL system that converts natural language prompts into SQL queries, generates realistic sample datasets, executes the queries using SQLite, and displays the results through an interactive Flask web interface.
+
+---
+
+## Features
+
+- Natural language to SQL conversion
+- AI-generated sample datasets
+- Automatic SQL query execution
+- In-memory SQLite database
+- Interactive web interface
+- Displays generated SQL queries
+- Displays generated datasets
+- Displays query execution results
+- User-friendly and responsive UI
+
+---
+
+## Technologies Used
+
+- Python
+- Flask
+- Groq API
+- SQLite
+- Pandas
+- HTML
+- CSS
+
+---
+
+## Project Architecture
+
+```
+User Prompt
+      ↓
+Groq API
+      ↓
+Generate SQL Query + Dataset
+      ↓
+SQLite Database
+      ↓
+Execute Query
+      ↓
+Display Results
+```
+
+---
+
+## Project Structure
+
+```
+text_to_sql/
+│
+├── app.py
+├── config.py
+├── grok_generator.py
+├── database_executor.py
+│
+├── templates/
+│     └── index.html
+│
+├── static/
+│     └── style.css
+│
+└── requirements.txt
+```
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/SmartSQL-AI-Based-Database-Query-Assistant.git
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Add Groq API Key
+
+Create a file named:
+
+```python
+config.py
+```
+
+Add:
+
+```python
+API_KEY = "YOUR_GROQ_API_KEY"
+```
+
+### Run the Application
+
+```bash
+python app.py
+```
+
+Open:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## Example Prompt
+
+```
+Show employees whose salary is greater than 50000
+```
+
+---
+
+## Output
+
+- Generated SQL Query
+- Generated Dataset
+- Query Result
+
+---
+
+## Future Enhancements
+
+- CSV file upload support
+- Multiple database support
+- Query history management
+- Export results to CSV
+- Authentication and user profiles
+- Data visualization dashboards
+
+---
+
+## Author
+
+Somula Lakshmi Sowjanya
+
+B.Tech Artificial Intelligence and Machine Learning
