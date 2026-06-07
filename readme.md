@@ -1,5 +1,11 @@
 # SmartSQL: AI-Based Database Query Assistant
 
+## Output
+
+<p align="center">
+  <img src="output.png" width="1000">
+</p>
+
 SmartSQL is an AI-powered Text-to-SQL system that converts natural language prompts into SQL queries, generates realistic sample datasets, executes the queries using SQLite, and displays the results through an interactive Flask web interface.
 
 ---
